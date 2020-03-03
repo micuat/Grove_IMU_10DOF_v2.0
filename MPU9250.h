@@ -38,7 +38,11 @@ THE SOFTWARE.
 #define _MPU9250_H_
 
 #include "I2Cdev.h"
-#include <avr/pgmspace.h>
+#if (defined(__AVR__))
+#include <avr\pgmspace.h>
+#else
+#include <pgmspace.h>
+#endif
 
 //Magnetometer Registers
 #define MPU9150_RA_MAG_ADDRESS		0x0C
